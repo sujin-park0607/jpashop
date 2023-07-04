@@ -14,25 +14,21 @@ public class OrderItem {
     private Order order;
 
 
-    @Column(name = "ITEM_ID")
-    private Long itemId;
-    private Integer orderPrice;
+    @ManyToOne
+    @JoinColumn(name = "ITEM_ID")
+    private Item item;
     private Integer count;
 
     public Long getId() {
         return id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Order getOrder() {
+        return order;
     }
 
-    public Long getItemId() {
-        return itemId;
-    }
-
-    public Integer getOrderPrice() {
-        return orderPrice;
+    public Item getItem() {
+        return item;
     }
 
     public Integer getCount() {
@@ -43,16 +39,12 @@ public class OrderItem {
         this.id = id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
-    }
-
-    public void setOrderPrice(Integer orderPrice) {
-        this.orderPrice = orderPrice;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public void setCount(Integer count) {
