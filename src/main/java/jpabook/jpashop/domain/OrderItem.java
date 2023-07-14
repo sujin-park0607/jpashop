@@ -18,6 +18,7 @@ public class OrderItem {
     @JoinColumn(name = "ITEM_ID")
     private Item item;
     private Integer count;
+    private Integer orderPrice;
 
     public Long getId() {
         return id;
